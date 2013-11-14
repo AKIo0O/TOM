@@ -44,7 +44,10 @@ T.extend(Tempalte, Class);
 
 Tempalte.prototype = {
 
-    complie: function(){}
+    complie: function(){
+        
+        
+    }
 
 
 };

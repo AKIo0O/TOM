@@ -1,6 +1,6 @@
 
 var T = require("kasync");
-
+var Test = require('./test.js');
 //------------------------------------------------------
 
 var res = "";
