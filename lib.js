@@ -1,7 +1,7 @@
 
 
 function Class(){
-
+    this.events = {};
 }
 
 T = {
@@ -30,25 +30,51 @@ T = {
         if(Array.isArray(arr)){
             while(arr.length) handler.call(arr.unshift(), arr[arr.length]);
         }
-    },
-
-    anyc: {},
-
-    callbacks: {},
-
-    wait: function(key, callback){
-
-        if(!T.anyc[key]) T.anyc[key] = 0;
-        T.anyc[key]++;
-        return function(){
-            callback();
-            if( --T.anyc[key] == 0 ) T.callbacks[key]();
-        };
-    },
-
-    done: function(key, callback){
-        T.callbacks[key] = callback;
     }
+};
+
+
+var Tempalte = function(){
+    Class.call(this);
+    this.complielist = [];
+    this.complied = false;
+};
+
+T.extend(Tempalte, Class);
+
+Tempalte.prototype = {
+
+    complie: function(){}
+
 
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 exports.T = T;
