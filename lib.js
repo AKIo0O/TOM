@@ -33,16 +33,16 @@ var Class = function(){
 Class.prototype = {
 
     compile: function(){
-        console.time("compile");
         var me = this;
 
         if(!me.compileList) console.error("无编译列表");
-
+        
+        console.time("compile");
         each(me.compileList, function(){
             me[this] = Handlebars.compile(me[this]);
         });
-        me.compiled = true;
         console.timeEnd("compile");
+        me.compiled = true;
     },
 
     run: function(data){
@@ -100,4 +100,7 @@ var Factory = function(){
 };
 extend(Factory, Class);
 
-exports.T = T;
+
+
+
+// exports.T = T;
