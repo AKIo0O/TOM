@@ -100,21 +100,4 @@ var Factory = function(){
 };
 extend(Factory, Class);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 exports.T = T;
