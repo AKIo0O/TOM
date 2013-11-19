@@ -1,4 +1,3 @@
-
 var T = {};
 
 var each = function(array, handler){
@@ -29,7 +28,6 @@ var checkMethod = function(type){
 
 var Class = function(){
 	this.compileList = [];
-	this.events = {};
 };
 
 Class.prototype = {
@@ -55,14 +53,9 @@ Class.prototype = {
 
 		if(!data) return "";
 
-		// try{
-			html = this.condition(data);
-			html = html ? html : this.process(data);
-		// }catch(e){
-			// return "";
-		// }
-		html = this.trigger("beforeend", html);
-
+		html = this.condition(data);
+		html = html ? html : this.process(data);
+		
 		return html;
 	},
 
@@ -84,17 +77,7 @@ Class.prototype = {
 		return "";
 	},
 
-	conditions: {},
-
-	trigger: function(name, context){
-		var event = this.events[name];
-		if(event) return event.call(this, context); 
-		return context;
-	},
-
-	on: function(name, handler){
-		this.events[name] = handler;
-	}
+	conditions: {}
 };
 
 var extend = function(sub, sup){
